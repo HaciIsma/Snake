@@ -1,0 +1,12 @@
+C:\Users\Haci\source\repos\ConsoleApp39\ConsoleApp39\bin\Debug\ConsoleApp39.exe.config
+C:\Users\Haci\source\repos\ConsoleApp39\ConsoleApp39\bin\Debug\ConsoleApp39.exe
+C:\Users\Haci\source\repos\ConsoleApp39\ConsoleApp39\bin\Debug\ConsoleApp39.pdb
+C:\Users\Haci\source\repos\ConsoleApp39\ConsoleApp39\obj\Debug\ConsoleApp39.csprojAssemblyReference.cache
+C:\Users\Haci\source\repos\ConsoleApp39\ConsoleApp39\obj\Debug\ConsoleApp39.exe
+C:\Users\Haci\source\repos\ConsoleApp39\ConsoleApp39\obj\Debug\ConsoleApp39.pdb
+C:\Users\Haci\Desktop\Snake V2\bin\Debug\ConsoleApp39.exe.config
+C:\Users\Haci\Desktop\Snake V2\bin\Debug\ConsoleApp39.exe
+C:\Users\Haci\Desktop\Snake V2\bin\Debug\ConsoleApp39.pdb
+C:\Users\Haci\Desktop\Snake V2\obj\Debug\ConsoleApp39.csprojAssemblyReference.cache
+C:\Users\Haci\Desktop\Snake V2\obj\Debug\ConsoleApp39.exe
+C:\Users\Haci\Desktop\Snake V2\obj\Debug\ConsoleApp39.pdb
