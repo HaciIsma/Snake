@@ -12,7 +12,6 @@ namespace ConsoleApp39.Model
             var key = Console.ReadKey().Key;
             do
             {
-                CheckTail(X, Y);
                 DeletePosition(new Pair { XP = X, YP = Y });
                 switch (key)
                 {
@@ -91,6 +90,7 @@ namespace ConsoleApp39.Model
                 Console.SetCursorPosition(8, 25);
                 Console.Write(eatingFoodSize);
                 Eat();
+                CheckTail(X, Y);
             } while (true);
         }
         public void Eat()
