@@ -10,9 +10,9 @@ namespace ConsoleApp39.Model
         public void Move()
         {
             var key = Console.ReadKey().Key;
-
             do
             {
+                DeletePosition(new Pair { XP = X, YP = Y });
                 switch (key)
                 {
                     case ConsoleKey.UpArrow:
@@ -31,9 +31,6 @@ namespace ConsoleApp39.Model
                             direction = 1;
                             CheckMove();
                             Direction();
-                            Console.SetCursorPosition(X, ++Y);
-                            Console.WriteLine(" ");
-                            --Y;
                         }
                         break;
                     case ConsoleKey.DownArrow:
@@ -51,9 +48,6 @@ namespace ConsoleApp39.Model
                             direction = 2;
                             CheckMove();
                             Direction();
-                            Console.SetCursorPosition(X, --Y);
-                            Console.WriteLine(" ");
-                            ++Y;
                         }
                         break;
                     case ConsoleKey.LeftArrow:
@@ -71,9 +65,6 @@ namespace ConsoleApp39.Model
                             direction = 3;
                             CheckMove();
                             Direction();
-                            Console.SetCursorPosition(++X, Y);
-                            Console.WriteLine(" ");
-                            --X;
                         }
                         break;
                     case ConsoleKey.RightArrow:
@@ -91,9 +82,6 @@ namespace ConsoleApp39.Model
                             direction = 4;
                             CheckMove();
                             Direction();
-                            Console.SetCursorPosition(--X, Y);
-                            Console.WriteLine(" ");
-                            ++X;
                         }
                         break;
                 }
@@ -111,6 +99,12 @@ namespace ConsoleApp39.Model
                 Fruit.FruitSize--;
                 eatingFoodSize++;
                 Console.Beep(2000, 400);
+
+                //Pair[] temp = new Pair[tailLength + 1];
+                //Array.Copy(temp,0, pairs,0, tailLength);
+                //temp[tailLength] = new Pair { XP = -1, YP = -1 };
+                //pairs = temp;
+                //tailLength++;
             }
         }
 
@@ -120,25 +114,29 @@ namespace ConsoleApp39.Model
         bool blockRigth = default;
         int direction = default;
 
+
         private void Direction()
         {
             switch (direction)
             {
                 case 1:
                     Console.WriteLine("^");
+                    Console.SetCursorPosition(X, Y + 1);
                     break;
                 case 2:
                     Console.WriteLine("V");
+                    Console.SetCursorPosition(X, Y - 1);
                     break;
                 case 3:
                     Console.WriteLine("<");
+                    Console.SetCursorPosition(X + 1, Y);
                     break;
                 case 4:
                     Console.WriteLine(">");
-                    break;
-                default:
+                    Console.SetCursorPosition(X - 1, Y);
                     break;
             }
+            Console.Write("#");
         }
 
         private void CheckMove()
@@ -163,6 +161,28 @@ namespace ConsoleApp39.Model
         public int EatingFoodSize
         {
             get { return eatingFoodSize; }
+        }
+
+        Pair[] pairs = new Pair[3]
+        {
+            new Pair { XP=-1,YP=-1},
+            new Pair { XP=-1,YP=-1},
+            new Pair { XP=-1,YP=-1}
+        };
+
+        private int tailLength = 3;
+
+        private void DeletePosition(Pair pair)
+        {
+            if (pairs[pairs.Length - 1].XP != -1)
+            {
+                Console.SetCursorPosition(pairs[pairs.Length - 1].XP, pairs[pairs.Length - 1].YP);
+                Console.Write(" ");
+            }
+            Pair[] temp = new Pair[tailLength];
+            temp[0] = pair;
+            Array.Copy(pairs, 0, temp, 1, tailLength - 1);
+            pairs = temp;
         }
     }
 }

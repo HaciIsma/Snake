@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Controller.cs" />
     <Compile Include="Model\Fruit.cs" />
+    <Compile Include="Model\Pair.cs" />
     <Compile Include="Model\Snake.cs" />
     <Compile Include="Model\Window.cs" />
     <Compile Include="Program.cs" />
