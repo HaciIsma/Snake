@@ -12,6 +12,7 @@ namespace ConsoleApp39.Model
             var key = Console.ReadKey().Key;
             do
             {
+                CheckTail(X, Y);
                 DeletePosition(new Pair { XP = X, YP = Y });
                 switch (key)
                 {
@@ -101,7 +102,7 @@ namespace ConsoleApp39.Model
                 Console.Beep(2000, 400);
 
                 Pair[] temp = new Pair[tailLength + 1];
-                Array.Copy(pairs,0, temp,0, tailLength);
+                Array.Copy(pairs, 0, temp, 0, tailLength);
                 temp[tailLength] = new Pair { XP = -1, YP = -1 };
                 pairs = temp;
                 tailLength++;
@@ -143,17 +144,11 @@ namespace ConsoleApp39.Model
         {
             if (!(Y > 0 && Y < 24))
             {
-                Console.Clear();
-                Console.WriteLine("You Lose");
-                Console.ReadLine();
-                Environment.Exit(0);
+                Window.Lose();
             }
             else if (!(X > 1 && X < 59))
             {
-                Console.Clear();
-                Console.WriteLine("You Lose");
-                Console.ReadLine();
-                Environment.Exit(0);
+                Window.Lose();
             }
         }
 
@@ -183,6 +178,16 @@ namespace ConsoleApp39.Model
             temp[0] = pair;
             Array.Copy(pairs, 0, temp, 1, tailLength - 1);
             pairs = temp;
+        }
+        private void CheckTail(int X, int Y)
+        {
+            foreach (var coord in pairs)
+            {
+                if (coord.XP == X && coord.YP == Y)
+                {
+                    Window.Lose();
+                }
+            }
         }
     }
 }

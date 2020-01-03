@@ -29,5 +29,13 @@ namespace ConsoleApp39.Model
             }
             Console.WriteLine($" Score: ");
         }
+
+        public static void Lose()
+        {
+            Console.Clear();
+            Console.WriteLine("You Lose");
+            Environment.Exit(0);
+        }
+
     }
 }
