@@ -100,11 +100,11 @@ namespace ConsoleApp39.Model
                 eatingFoodSize++;
                 Console.Beep(2000, 400);
 
-                //Pair[] temp = new Pair[tailLength + 1];
-                //Array.Copy(temp,0, pairs,0, tailLength);
-                //temp[tailLength] = new Pair { XP = -1, YP = -1 };
-                //pairs = temp;
-                //tailLength++;
+                Pair[] temp = new Pair[tailLength + 1];
+                Array.Copy(pairs,0, temp,0, tailLength);
+                temp[tailLength] = new Pair { XP = -1, YP = -1 };
+                pairs = temp;
+                tailLength++;
             }
         }
 
